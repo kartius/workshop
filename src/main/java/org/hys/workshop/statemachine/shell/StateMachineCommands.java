@@ -13,8 +13,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.time.Instant;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 @ShellComponent
 @Component
@@ -36,12 +34,6 @@ public class StateMachineCommands {
         restore(machineId);
         log.info(String.format("Extended state variables - %s", stateMachine.getExtendedState().getVariables()));
     }
-
-//    private int getRundomId(){
-//        int min =1;
-//        int max =100;
-//        return ThreadLocalRandom.current().nextInt(min, max + 1);
-//    }
 
     private void restore(String machineId) {
         final StateMachineContext<PaymentStateMachineFactory.States, PaymentStateMachineFactory.Events> context = persister.read(machineId);

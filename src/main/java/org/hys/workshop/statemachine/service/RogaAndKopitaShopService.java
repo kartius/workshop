@@ -1,15 +1,13 @@
 package org.hys.workshop.statemachine.service;
 
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class HillelOnlineShopService implements PaymentService {
+public class RogaAndKopitaShopService implements PaymentService {
 
-
-    private static final String SHOP_NAME = "Hillel";
+    private static final String SHOP_NAME = "RogaAndKopita";
 
     @Override
     public String pay(String paymentId) {
